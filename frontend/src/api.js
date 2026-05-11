@@ -14,7 +14,7 @@ export async function apiRequest(path, { token, method = 'GET', body } = {}) {
   const payload = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    throw new Error(payload.error || 'Unexpected error.');
+    throw new Error(payload.error || 'Erreur inattendue.');
   }
 
   return payload;

@@ -8,11 +8,10 @@ describe('App', () => {
     window.history.replaceState(null, '', '/');
   });
 
-  it('renders the login screen for anonymous players', () => {
+  it('renders anonymous shell with auth layout', () => {
     render(<App />);
 
-    expect(screen.getAllByRole('button', { name: /sign in/i })).toHaveLength(2);
-    expect(screen.getByText('Padel Levels')).toBeInTheDocument();
-    expect(screen.getByText('Club levels')).toBeInTheDocument();
+    expect(document.querySelector('.auth-layout')).toBeTruthy();
+    expect(screen.getByText('Niveaux club')).toBeInTheDocument();
   });
 });
