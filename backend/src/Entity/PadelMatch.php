@@ -22,7 +22,7 @@ use Symfony\Component\Serializer\Attribute\SerializedName;
 #[ORM\Entity]
 #[ApiResource(
     operations: [
-        new Get(uriTemplate: '/matches/{id}', security: "object.hasPlayer(user)"),
+        new Get(uriTemplate: '/matches/{id}', security: 'object.hasPlayer(user)'),
         new GetCollection(uriTemplate: '/matches', provider: MatchCollectionProvider::class),
         new Post(uriTemplate: '/matches', input: CreateMatchInput::class, processor: CreateMatchProcessor::class),
         new Post(
@@ -122,7 +122,7 @@ class PadelMatch
         Player $teamBPlayer1,
         Player $teamBPlayer2,
         Player $createdBy,
-        ?\DateTimeImmutable $scheduledAt = null
+        ?\DateTimeImmutable $scheduledAt = null,
     ) {
         $this->teamAPlayer1 = $teamAPlayer1;
         $this->teamAPlayer2 = $teamAPlayer2;

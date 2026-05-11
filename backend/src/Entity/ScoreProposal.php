@@ -16,7 +16,7 @@ use Symfony\Component\Serializer\Attribute\Groups;
 #[ORM\Entity]
 #[ApiResource(
     operations: [
-        new Get(uriTemplate: '/score-proposals/{id}', security: "object.getPadelMatch().hasPlayer(user)"),
+        new Get(uriTemplate: '/score-proposals/{id}', security: 'object.getPadelMatch().hasPlayer(user)'),
         new Post(
             uriTemplate: '/matches/{id}/score-proposals',
             uriVariables: ['id' => new Link(fromClass: PadelMatch::class)],
@@ -130,7 +130,7 @@ class ScoreProposal
     public function getApprovedCount(): int
     {
         return $this->validations->filter(
-            fn (ScoreValidation $validation) => $validation->getDecision() === ScoreValidation::DECISION_APPROVED
+            static fn (ScoreValidation $validation) => ScoreValidation::DECISION_APPROVED === $validation->getDecision()
         )->count();
     }
 
@@ -138,13 +138,13 @@ class ScoreProposal
     public function getRejectedCount(): int
     {
         return $this->validations->filter(
-            fn (ScoreValidation $validation) => $validation->getDecision() === ScoreValidation::DECISION_REJECTED
+            static fn (ScoreValidation $validation) => ScoreValidation::DECISION_REJECTED === $validation->getDecision()
         )->count();
     }
 
     #[Groups(['score:read', 'match:read'])]
     public function getRequiredCount(): int
     {
-        return count($this->padelMatch->getPlayers());
+        return \count($this->padelMatch->getPlayers());
     }
 }

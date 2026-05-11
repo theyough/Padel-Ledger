@@ -22,7 +22,7 @@ class LevelCalculator
         $teamBRating = $this->averageRating($teamB);
 
         $expectedA = 1.0 / (1.0 + 10 ** (($teamBRating - $teamARating) / 400.0));
-        $actualA = $winner === 'A' ? 1.0 : 0.0;
+        $actualA = 'A' === $winner ? 1.0 : 0.0;
         $marginFactor = 1.0 + min(0.5, $this->scoreValidator->margin($sets) / 36.0);
         $teamDeltaA = 32.0 * $marginFactor * ($actualA - $expectedA);
         $changes = [];
@@ -70,6 +70,6 @@ class LevelCalculator
      */
     private function averageRating(array $players): float
     {
-        return array_sum(array_map(fn (Player $player) => $player->getRating(), $players)) / count($players);
+        return array_sum(array_map(static fn (Player $player) => $player->getRating(), $players)) / \count($players);
     }
 }

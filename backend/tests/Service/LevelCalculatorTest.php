@@ -36,7 +36,7 @@ class LevelCalculatorTest extends TestCase
     private function player(float $rating): Player
     {
         return (new Player())
-            ->setEmail(sprintf('player-%d@example.test', (int) $rating))
+            ->setEmail(\sprintf('player-%d@example.test', (int) $rating))
             ->setFirstName('Test')
             ->setLastName('Player')
             ->setPasswordHash('hash')

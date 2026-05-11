@@ -15,7 +15,7 @@ class ApproveCurrentScoreProcessor implements ProcessorInterface
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
         private readonly MatchWorkflow $matchWorkflow,
-        private readonly LevelCalculator $levelCalculator
+        private readonly LevelCalculator $levelCalculator,
     ) {
     }
 
@@ -25,7 +25,7 @@ class ApproveCurrentScoreProcessor implements ProcessorInterface
         $match = $this->matchWorkflow->getMatch($uriVariables['id'] ?? 0);
         $this->matchWorkflow->assertPlayerCanAccessMatch($match, $player);
 
-        if ($match->getStatus() === PadelMatch::STATUS_VALIDATED) {
+        if (PadelMatch::STATUS_VALIDATED === $match->getStatus()) {
             return $match;
         }
 

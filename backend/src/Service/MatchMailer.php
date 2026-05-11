@@ -14,7 +14,7 @@ class MatchMailer
     public function __construct(
         private readonly MailerInterface $mailer,
         #[Autowire('%env(FRONTEND_URL)%')]
-        private readonly string $frontendUrl
+        private readonly string $frontendUrl,
     ) {
     }
 
@@ -24,7 +24,7 @@ class MatchMailer
             $this->send(
                 $player,
                 'Match score requested',
-                sprintf(
+                \sprintf(
                     "Hello %s,\n\nMatch #%d is finished. You can enter or validate the score here:\n%s/matches/%d\n",
                     $player->getFirstName(),
                     $match->getId(),
@@ -45,7 +45,7 @@ class MatchMailer
             $this->send(
                 $player,
                 'Match score validation requested',
-                sprintf(
+                \sprintf(
                     "Hello %s,\n\nA score has been proposed for match #%d. Please validate it or submit a correction:\n%s/matches/%d\n",
                     $player->getFirstName(),
                     $match->getId(),

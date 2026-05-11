@@ -20,7 +20,7 @@ class CorsSubscriber implements EventSubscriberInterface
 
     public function onRequest(RequestEvent $event): void
     {
-        if ($event->getRequest()->getMethod() === 'OPTIONS') {
+        if ('OPTIONS' === $event->getRequest()->getMethod()) {
             $response = new Response('', Response::HTTP_NO_CONTENT);
             $this->addHeaders($response);
             $event->setResponse($response);

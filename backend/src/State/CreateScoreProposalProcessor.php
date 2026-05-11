@@ -20,7 +20,7 @@ class CreateScoreProposalProcessor implements ProcessorInterface
         private readonly EntityManagerInterface $entityManager,
         private readonly MatchWorkflow $matchWorkflow,
         private readonly ScoreValidator $scoreValidator,
-        private readonly MatchMailer $matchMailer
+        private readonly MatchMailer $matchMailer,
     ) {
     }
 
@@ -34,7 +34,7 @@ class CreateScoreProposalProcessor implements ProcessorInterface
         $match = $this->matchWorkflow->getMatch($uriVariables['id'] ?? 0);
         $this->matchWorkflow->assertPlayerCanAccessMatch($match, $player);
 
-        if ($match->getStatus() === PadelMatch::STATUS_VALIDATED) {
+        if (PadelMatch::STATUS_VALIDATED === $match->getStatus()) {
             throw new BadRequestHttpException('This match is already validated.');
         }
 

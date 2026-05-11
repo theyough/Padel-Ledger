@@ -11,7 +11,7 @@ class AuthPayload
         #[Groups(['auth:read'])]
         public string $token,
         #[Groups(['auth:read'])]
-        public Player $player
+        public Player $player,
     ) {
     }
 }

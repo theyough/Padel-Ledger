@@ -15,7 +15,7 @@ class RejectCurrentScoreProcessor implements ProcessorInterface
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly MatchWorkflow $matchWorkflow
+        private readonly MatchWorkflow $matchWorkflow,
     ) {
     }
 
@@ -29,7 +29,7 @@ class RejectCurrentScoreProcessor implements ProcessorInterface
         $match = $this->matchWorkflow->getMatch($uriVariables['id'] ?? 0);
         $this->matchWorkflow->assertPlayerCanAccessMatch($match, $player);
 
-        if ($match->getStatus() === PadelMatch::STATUS_VALIDATED) {
+        if (PadelMatch::STATUS_VALIDATED === $match->getStatus()) {
             throw new BadRequestHttpException('This match is already validated.');
         }
 

@@ -16,7 +16,7 @@ class MatchWorkflow
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly Security $security
+        private readonly Security $security,
     ) {
     }
 
@@ -85,7 +85,7 @@ class MatchWorkflow
                 'player' => $player,
             ]);
 
-            if (!$validation instanceof ScoreValidation || $validation->getDecision() !== ScoreValidation::DECISION_APPROVED) {
+            if (!$validation instanceof ScoreValidation || ScoreValidation::DECISION_APPROVED !== $validation->getDecision()) {
                 return false;
             }
         }

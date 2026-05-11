@@ -22,7 +22,7 @@ class LevelEstimate
 {
     public function __construct(
         public int $level,
-        public float $rating
+        public float $rating,
     ) {
     }
 }

@@ -16,7 +16,7 @@ class CreateMatchProcessor implements ProcessorInterface
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly MatchWorkflow $matchWorkflow
+        private readonly MatchWorkflow $matchWorkflow,
     ) {
     }
 
@@ -31,11 +31,11 @@ class CreateMatchProcessor implements ProcessorInterface
         $teamBIds = array_map('intval', $data->teamB);
         $allIds = array_merge($teamAIds, $teamBIds);
 
-        if (count($teamAIds) !== 2 || count($teamBIds) !== 2 || count(array_unique($allIds)) !== 4) {
+        if (2 !== \count($teamAIds) || 2 !== \count($teamBIds) || 4 !== \count(array_unique($allIds))) {
             throw new BadRequestHttpException('A match must contain 2 players per team and 4 distinct players.');
         }
 
-        if (!in_array($player->getId(), $allIds, true)) {
+        if (!\in_array($player->getId(), $allIds, true)) {
             throw new AccessDeniedHttpException('You must be part of the match to create it.');
         }
 
@@ -65,7 +65,7 @@ class CreateMatchProcessor implements ProcessorInterface
         foreach ($ids as $id) {
             $player = $this->entityManager->getRepository(Player::class)->find($id);
             if (!$player instanceof Player) {
-                throw new BadRequestHttpException(sprintf('Player #%d was not found.', $id));
+                throw new BadRequestHttpException(\sprintf('Player #%d was not found.', $id));
             }
             $players[$id] = $player;
         }

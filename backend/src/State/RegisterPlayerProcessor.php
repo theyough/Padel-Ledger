@@ -20,7 +20,7 @@ class RegisterPlayerProcessor implements ProcessorInterface
         private readonly EntityManagerInterface $entityManager,
         private readonly JWTTokenManagerInterface $jwtTokenManager,
         private readonly UserPasswordHasherInterface $passwordHasher,
-        private readonly QuestionnaireLevelEstimator $levelEstimator
+        private readonly QuestionnaireLevelEstimator $levelEstimator,
     ) {
     }
 
@@ -31,11 +31,11 @@ class RegisterPlayerProcessor implements ProcessorInterface
         }
 
         $email = strtolower(trim($data->email));
-        if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if ('' === $email || !filter_var($email, \FILTER_VALIDATE_EMAIL)) {
             throw new BadRequestHttpException('Invalid email.');
         }
 
-        if (strlen($data->password) < 8) {
+        if (\strlen($data->password) < 8) {
             throw new BadRequestHttpException('The password must contain at least 8 characters.');
         }
 

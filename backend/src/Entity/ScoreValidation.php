@@ -9,7 +9,7 @@ use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity]
 #[ApiResource(
-    operations: [new Get(uriTemplate: '/score-validations/{id}', security: "object.getScoreProposal().getPadelMatch().hasPlayer(user)")],
+    operations: [new Get(uriTemplate: '/score-validations/{id}', security: 'object.getScoreProposal().getPadelMatch().hasPlayer(user)')],
     normalizationContext: ['groups' => ['score_validation:read']],
     security: "is_granted('ROLE_USER')"
 )]

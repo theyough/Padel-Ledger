@@ -12,7 +12,7 @@ class MatchCollectionProvider implements ProviderInterface
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly MatchWorkflow $matchWorkflow
+        private readonly MatchWorkflow $matchWorkflow,
     ) {
     }
 
