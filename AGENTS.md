@@ -1,5 +1,14 @@
 # Project Rules
 
+## Git commits
+
+- **Every commit message must follow [Conventional Commits](https://www.conventionalcommits.org/)** (`<type>[optional scope]: <description>`).
+- **Types** (non-exhaustive): `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`. Pick the type that best matches the change.
+- **Description**: imperative mood, concise, no trailing period; use English for `type`, `scope`, and description (consistent with API/codebase language).
+- **Scope** (optional): short area, e.g. `feat(api): …`, `fix(frontend): …`, `chore(docker): …`.
+- **Breaking changes**: add `!` after the type/scope (e.g. `feat(api)!: remove legacy field`) and/or a footer `BREAKING CHANGE: …` explaining migration.
+- **Examples**: `feat(matches): validate score before persist`, `fix(auth): refresh token expiry`, `docs: update AGENTS test instructions`, `chore: bump lockfile`.
+
 ## API
 
 - All `/api/*` endpoints must be API Platform operations.
