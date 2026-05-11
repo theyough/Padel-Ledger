@@ -1,0 +1,9 @@
+.DS_Store
+.env.local
+backend/.env.local
+backend/.phpunit.cache/
+backend/vendor/
+backend/var/
+frontend/node_modules/
+frontend/coverage/
+frontend/dist/

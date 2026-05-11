@@ -1,0 +1,36 @@
+security:
+  password_hashers:
+    App\Entity\Player:
+      algorithm: auto
+
+  providers:
+    app_user_provider:
+      entity:
+        class: App\Entity\Player
+        property: email
+
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+
+    api_login:
+      pattern: ^/api/auth/(login|register)$
+      stateless: true
+
+    api_docs:
+      pattern: ^/api(/docs|/contexts|/openapi.json)?$
+      stateless: true
+      security: false
+
+    api:
+      pattern: ^/api
+      stateless: true
+      jwt: ~
+
+  access_control:
+    - { path: ^/api/health, roles: PUBLIC_ACCESS }
+    - { path: ^/api/auth/(login|register)$, roles: PUBLIC_ACCESS }
+    - { path: ^/api/questionnaire/level$, roles: PUBLIC_ACCESS, methods: [POST] }
+    - { path: ^/api(/docs|/contexts|/openapi.json)?$, roles: PUBLIC_ACCESS }
+    - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }

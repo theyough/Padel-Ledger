@@ -1,0 +1,14 @@
+api_platform:
+  title: Padel Level Manager API
+  version: 0.1.0
+  mapping:
+    paths:
+      - '%kernel.project_dir%/src/Entity'
+      - '%kernel.project_dir%/src/ApiResource'
+  formats:
+    json: ['application/json']
+    jsonld: ['application/ld+json']
+  docs_formats:
+    jsonld: ['application/ld+json']
+    jsonopenapi: ['application/vnd.openapi+json']
+    html: ['text/html']
