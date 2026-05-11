@@ -24,6 +24,7 @@
 - All user-visible copy must be in **French** (labels, buttons, headings, empty states, placeholders). Keep code identifiers, file names, props, API field names, and routes in **English**.
 - Prefer a sober, operational UI with concise wording.
 - Run frontend Vitest **via Docker Compose** (see Docker), not as the default workflow on the host.
+- Install and update JS dependencies **inside the running `frontend` container**: `docker compose exec frontend npm install` (or add packages with `docker compose exec frontend npm install <pkg>`). Prefer **`make frontend-install`** after `make up` instead of running `npm install` on the host.
 
 ## Docker
 

@@ -16,7 +16,7 @@ disable-model-invocation: true
 | Tests | Vitest 3, **jsdom**, **@testing-library/react**, **@testing-library/jest-dom** |
 | Env | `import.meta.env` (e.g. `VITE_API_URL`); see `frontend/src/api.js` |
 
-Local dev from `frontend/`: `npm run dev`, `npm run build`. **Run tests through Docker Compose** (see repo `AGENTS.md`); Vitest is executed in the `frontend_tests` service, not as the default verification path on the host.
+With the dev stack up, use **`docker compose exec frontend …`** for npm (e.g. `exec frontend npm install`, `exec frontend npm run dev`). **`make frontend-install`** wraps `exec frontend npm install`. **Run tests through Docker Compose** (see `AGENTS.md`); Vitest runs in `frontend_tests` for CI-style checks.
 
 ## Project rules (see `AGENTS.md`)
 
@@ -61,7 +61,7 @@ frontend/src/
 - **Setup**: `vitest.setup.js` imports `@testing-library/jest-dom/vitest` for matchers like `toBeInTheDocument()`.
 - **Component tests**: render with `render()` from `@testing-library/react`; assert with **roles and accessible names** (`getByRole`, `findByRole`)—not CSS selectors or implementation details unless unavoidable.
 - **Network**: mock `globalThis.fetch` with `vi.spyOn` (see `api.test.jsx`) or MSW later if integration-style tests multiply.
-- **User flows**: prefer **`@testing-library/user-event`** over `fireEvent` when adding the dependency; install with `npm i -D @testing-library/user-event` and `user.setup()` per test for realistic interactions.
+- **User flows**: prefer **`@testing-library/user-event`** over `fireEvent` when adding the dependency; install with `docker compose exec frontend npm install -D @testing-library/user-event` (dev stack up) and `user.setup()` per test for realistic interactions.
 
 **Commands (project rule: use Compose)**
 
