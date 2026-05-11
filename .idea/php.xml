@@ -126,6 +126,13 @@
       <path value="$PROJECT_DIR$/backend/vendor/react/socket" />
       <path value="$PROJECT_DIR$/backend/vendor/react/dns" />
       <path value="$PROJECT_DIR$/backend/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/backend/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/backend/vendor/monolog/monolog" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

@@ -26,7 +26,7 @@ class ScoreValidation
     #[Groups(['score_validation:read', 'match:read', 'score:read'])]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(targetEntity: ScoreProposal::class)]
+    #[ORM\ManyToOne(targetEntity: ScoreProposal::class, inversedBy: 'validations')]
     #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
     #[Groups(['score_validation:read'])]
     private ScoreProposal $scoreProposal;

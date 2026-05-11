@@ -40,7 +40,7 @@ class ScoreProposal
     #[Groups(['score:read', 'match:read'])]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(targetEntity: PadelMatch::class)]
+    #[ORM\ManyToOne(targetEntity: PadelMatch::class, inversedBy: 'scoreProposals')]
     #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
     private PadelMatch $padelMatch;
 
