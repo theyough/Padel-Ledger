@@ -25,6 +25,7 @@
     "symfony/yaml": "^7.0"
   },
   "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.95",
     "symfony/phpunit-bridge": "^7.0"
   },
   "autoload": {
@@ -50,6 +51,8 @@
       "assets:install %PUBLIC_DIR%": "symfony-cmd"
     },
     "test": "simple-phpunit",
+    "cs-fix": "php-cs-fixer fix",
+    "cs-fixer:check": "php-cs-fixer fix --dry-run --diff --verbose",
     "post-install-cmd": [
       "@auto-scripts"
     ],
