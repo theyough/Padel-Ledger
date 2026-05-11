@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/backend/src" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/backend/tests" isTestSource="true" packagePrefix="App\Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/api-platform/core" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/clue/ndjson-react" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/collections" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/dbal" />
@@ -20,6 +21,10 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/persistence" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/ergebnis/agent-detector" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/evenement/evenement" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/fidry/cpu-core-counter" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/friendsofphp/php-cs-fixer" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/lcobucci/jwt" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/lexik/jwt-authentication-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/psr/cache" />
@@ -28,6 +33,14 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/psr/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/psr/link" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/child-process" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/dns" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/event-loop" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/socket" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/react/stream" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/sebastian/diff" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/cache" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/cache-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/clock" />
@@ -48,6 +61,7 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/http-kernel" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/mailer" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/options-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/password-hasher" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/phpunit-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-ctype" />
@@ -55,9 +69,12 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-intl-idn" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-intl-normalizer" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php81" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php83" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php84" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php85" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/property-access" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/property-info" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/routing" />

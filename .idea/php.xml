@@ -24,6 +24,7 @@
   </component>
   <component name="PhpCSFixer">
     <phpcsfixer_settings>
+      <PhpCSFixerConfiguration tool_path="$PROJECT_DIR$/backend/vendor/bin/php-cs-fixer" />
       <phpcs_fixer_by_interpreter asDefaultInterpreter="true" interpreter_id="a7c0f383-a523-441f-b434-bad6de4f70a4" timeout="30000" />
     </phpcsfixer_settings>
   </component>
@@ -108,6 +109,23 @@
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/collections" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/backend/vendor/fidry/cpu-core-counter" />
+      <path value="$PROJECT_DIR$/backend/vendor/clue/ndjson-react" />
+      <path value="$PROJECT_DIR$/backend/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/backend/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/backend/vendor/ergebnis/agent-detector" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/child-process" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/backend/vendor/react/promise" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

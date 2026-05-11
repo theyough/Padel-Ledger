@@ -15,6 +15,7 @@
 - Use DTO inputs for non-trivial write operations instead of deserializing directly into entities.
 - Protect match resources so only the 4 players in a match can read or mutate them.
 - Run backend tests through Symfony PHPUnit Bridge **inside the test container** (see Docker).
+- Format PHP with **PHP CS Fixer** (`backend/.php-cs-fixer.dist.php`, Symfony-oriented rules). With the dev stack running, use **`docker compose exec backend composer cs-fix`** to apply fixes, or **`docker compose exec backend composer cs-fixer:check`** for a dry run (requires the `backend` service from `docker compose up`, not a one-off `run`).
 
 ## Frontend
 

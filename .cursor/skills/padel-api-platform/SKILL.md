@@ -42,6 +42,7 @@ disable-model-invocation: true
 ## Testing and tooling
 
 - Run backend tests with **Symfony PHPUnit Bridge** **via Docker Compose** only (`docker compose -f docker-compose.test.yml …`); see `AGENTS.md`. Use `run --rm backend_tests` for a backend-only loop.
+- **PHP CS Fixer** (dev stack must be up): `docker compose exec backend composer cs-fix` or `… composer cs-fixer:check`.
 - For PHP syntax checks, target `backend/src`, `backend/config`, and tests—not `backend/var` or `backend/vendor`.
 
 ## Examples (existing code)

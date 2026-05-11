@@ -6,8 +6,9 @@ declare(strict_types=1);
  * PHP CS Fixer — Symfony-aligned rules for this API Platform app.
  *
  * @see https://cs.symfony.com/doc/ruleSets/Symfony.html
- * Run (from repo, via Docker): docker compose run --rm backend composer cs-fix
- * Or: docker compose run --rm backend composer cs-fixer:check
+ * With the dev stack up (`docker compose up` from the repo root):
+ *   docker compose exec backend composer cs-fix
+ *   docker compose exec backend composer cs-fixer:check
  */
 $finder = (new PhpCsFixer\Finder())
     ->in([
